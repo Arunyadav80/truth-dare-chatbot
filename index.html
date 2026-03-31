@@ -4,102 +4,170 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Truth or Dare Assistant</title>
+<title>Truth or Dare AI Game</title>
 
 <style>
 
-body{
-font-family: Arial, sans-serif;
+*{
 margin:0;
-background:#f4f6fb;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(-45deg,#0f172a,#312e81,#7c3aed,#0ea5e9);
+background-size:400% 400%;
+animation:gradientMove 10s infinite alternate;
+color:white;
 text-align:center;
+min-height:100vh;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
 }
 
 header{
-padding:20px;
-font-size:24px;
+padding:30px;
+font-size:30px;
 font-weight:bold;
-color:#2c5cc5;
+letter-spacing:2px;
 }
 
 .hero{
-margin-top:80px;
+margin-top:60px;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:10px;
+font-size:60px;
+margin-bottom:15px;
 }
 
 .hero p{
+font-size:20px;
+opacity:0.9;
+}
+
+.start-btn{
+margin-top:30px;
+padding:16px 45px;
 font-size:18px;
-color:#555;
+border:none;
+border-radius:40px;
+background:#22c55e;
+color:white;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 15px #22c55e;
+}
+
+.start-btn:hover{
+transform:scale(1.1);
+background:#16a34a;
+box-shadow:0 0 25px #22c55e;
 }
 
 .boxes{
 display:flex;
 justify-content:center;
-gap:30px;
-margin-top:60px;
+gap:35px;
+margin-top:80px;
 flex-wrap:wrap;
+padding:20px;
 }
 
 .box{
-background:white;
-padding:30px;
-border-radius:12px;
-width:250px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:20px;
+width:260px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:0.4s;
 }
 
 .box:hover{
-transform:translateY(-5px);
+transform:translateY(-12px) scale(1.05);
+background:rgba(255,255,255,0.2);
 }
 
 .box h3{
-margin-bottom:10px;
+margin-bottom:12px;
+font-size:22px;
+}
+
+footer{
+margin-top:80px;
+padding:20px;
+font-size:14px;
+opacity:0.8;
 }
 
 </style>
 
-<!-- WotNot Chatbot Script -->
+<!-- WotNot Chatbot -->
 <script src="https://app.wotnot.io/chat-widget/Hvgmp5tgXXNT072052654761l3rZHuVQ.js" defer></script>
+
+<script>
+
+function openChat(){
+
+setTimeout(()=>{
+let chat=document.querySelector("iframe");
+if(chat){
+chat.style.display="block";
+}
+},500);
+
+}
+
+</script>
 
 </head>
 
 <body>
 
 <header>
-Truth or Dare Assistant
+🎮 Truth or Dare AI Game
 </header>
 
 <div class="hero">
 
-<h1>Your Fun Game Starts Here</h1>
+<h1>Play Truth or Dare</h1>
 
-<p>Open the chatbot in the bottom right corner and start playing Truth or Dare.</p>
+<p>Click the chatbot in the bottom right corner or press Start Game.</p>
+
+<button class="start-btn" onclick="openChat()">
+Start Game
+</button>
 
 </div>
 
 <div class="boxes">
 
 <div class="box">
-<h3>Truth Questions</h3>
-<p>Answer fun and interesting questions.</p>
+<h3>🤔 Truth Mode</h3>
+<p>Answer funny and embarrassing questions and reveal secrets.</p>
 </div>
 
 <div class="box">
-<h3>Dare Challenges</h3>
-<p>Complete crazy challenges and have fun.</p>
+<h3>🔥 Dare Mode</h3>
+<p>Complete crazy dares and challenge your courage.</p>
 </div>
 
 <div class="box">
-<h3>Play Again</h3>
-<p>Keep playing and enjoy the chatbot game.</p>
+<h3>🔄 Play Again</h3>
+<p>Restart the game anytime and challenge your friends again.</p>
 </div>
 
 </div>
+
+<footer>
+Made by Arun 🚀 | AI Chatbot Project
+</footer>
 
 </body>
+
 </html>
